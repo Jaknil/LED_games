@@ -12,10 +12,13 @@
 
 ## Pictures
 ![](img/display_and_controller.jpg)
+*16x16
 ![](img/card_front.jpg)
 ![](img/card_back.jpg)
 
-## BOM
+## BOM 
+
+### Controller board
 
 Made with [https://donatstudios.com/CsvToMarkdownTable](https://donatstudios.com/CsvToMarkdownTable) and an included KiCAD default BOM to CSV plugin that collated the components
 
@@ -35,9 +38,78 @@ Made with [https://donatstudios.com/CsvToMarkdownTable](https://donatstudios.com
 | 12   | 1   | SW2                                                     | ENC1              | Device:Rotary_Encoder_Switch,,~, |                       |                                                                  |        | 
 | 13   | 1   | SW9                                                     | ENC2              | Device:Rotary_Encoder_Switch,,~, |                       |                                                                  |        | 
 
+### LED matrix
+![](led_matrix.jpg)
+*LED Matrix 16x16 DIY GyverLamp WS2812B RGB Bendable Digital Flexible Individually addressable strip Pixel light wifi lamp DC5V*
+$14.99
+[Aliexpress link](https://www.aliexpress.com/item/4000384823406.html?spm=a2g0s.9042311.0.0.11c24c4dD5sZfY)
+
+Runs on 5V, 50mA per LED
+
+16*16 = 256 leds => 12.8A maximum potiential power draw! USB power supplies tend to max out at 2A so I either need to software limit the power consumtion or use mulitple supplies.
+
+I'll use the [Fastled library](https://github.com/FastLED/FastLED) to control the panel. It can be installed directly through the Arduino library manager.
+
+### Power supplies
+
+I have access to:
+
+* 0.9A from my laptop USB 
+* 2.4A USB power supply (from a RaspberryPi kit)
+* 2 A barrel jack power supply (fits Arduino UNO)
+
+I'll software limit the power draw. I'm using a laptop to test the card and USB 3.0 can give [0.9A](https://en.wikipedia.org/wiki/USB_3.0)
+I can increase as needed later.
+
+I'll try to buy a barrel jack adapter so that I don't have to cut the cables on the second power supply.
+
+### Microcontroller
+
+I'm using an Arduino Nano with the CH40 USB to transistor logic chip. [Drivers for the chip](https://github.com/Jaknil/Arduino_material/blob/master/CH341SER.EXE)
+
+$2.46 with USB cable
+* [Aliexpress link](https://www.aliexpress.com/item/32341832857.html?spm=a2g0s.9042311.0.0.27424c4dasmxDQ)
 
 ## In work
 * ~~Get the buttons working~~
 * Get this to work automagically [KiCAD BOM to Markdown](https://analogoutputblog.wordpress.com/2020/07/03/mark-down-your-bom/)
 * Get the encoders working
 * [ ] Add checkboxes 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
