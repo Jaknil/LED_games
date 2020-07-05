@@ -45,7 +45,7 @@ Made with [https://donatstudios.com/CsvToMarkdownTable](https://donatstudios.com
 $14.99
 [Aliexpress link](https://www.aliexpress.com/item/4000384823406.html?spm=a2g0s.9042311.0.0.11c24c4dD5sZfY)
 
-#### Power consmption
+#### Power consumption
 
 Runs on 5V, 50mA per LED
 
@@ -71,10 +71,25 @@ I'll try to buy a barrel jack adapter so that I don't have to cut the cables on 
 
 ### Microcontroller
 
+![](img/arduino.jpg)
+
 I'm using an Arduino Nano with the CH40 USB to transistor logic chip. [Drivers for the chip](https://github.com/Jaknil/Arduino_material/blob/master/CH341SER.EXE)
 
 $2.46 with USB cable
 * [Aliexpress link](https://www.aliexpress.com/item/32341832857.html?spm=a2g0s.9042311.0.0.27424c4dasmxDQ)
+
+### Encoders
+
+![](img/encoder.jpg)
+
+![](rotary-encoder-connection.jpg)
+
+20 steps per rotation
+
+$1.89 for 5 
+[Aliexpress link](https://www.aliexpress.com/item/32872023811.html?spm=a2g0s.9042311.0.0.27424c4dcrN317)
+
+There is much talk online of the need to hardware debounce the noise from the internal contacts. I hope that I can do it in software instead, this page seems like a good place to start: [buxtronix](http://www.buxtronix.net/2011/10/rotary-encoders-done-properly.html)
 
 ## Tasklist
 * [X] Make a repo
