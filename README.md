@@ -15,6 +15,7 @@
 *16x16
 ![](img/card_front.jpg)
 ![](img/card_back.jpg)
+![](img/arduino_ios.JPG)
 
 ## BOM 
 
@@ -44,11 +45,16 @@ Made with [https://donatstudios.com/CsvToMarkdownTable](https://donatstudios.com
 $14.99
 [Aliexpress link](https://www.aliexpress.com/item/4000384823406.html?spm=a2g0s.9042311.0.0.11c24c4dD5sZfY)
 
+#### Power consmption
+
 Runs on 5V, 50mA per LED
 
 16*16 = 256 leds => 12.8A maximum potiential power draw! USB power supplies tend to max out at 2A so I either need to software limit the power consumtion or use mulitple supplies.
 
 I'll use the [Fastled library](https://github.com/FastLED/FastLED) to control the panel. It can be installed directly through the Arduino library manager.
+
+I use the [Adafruit Neopixel best practices](https://learn.adafruit.com/adafruit-neopixel-uberguide/best-practices) for connecting to and powering the LEDs
+
 
 ### Power supplies
 
