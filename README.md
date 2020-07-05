@@ -76,11 +76,21 @@ I'm using an Arduino Nano with the CH40 USB to transistor logic chip. [Drivers f
 $2.46 with USB cable
 * [Aliexpress link](https://www.aliexpress.com/item/32341832857.html?spm=a2g0s.9042311.0.0.27424c4dasmxDQ)
 
-## In work
-* ~~Get the buttons working~~
-* Get this to work automagically [KiCAD BOM to Markdown](https://analogoutputblog.wordpress.com/2020/07/03/mark-down-your-bom/)
-* Get the encoders working
-* [ ] Add checkboxes 
+## Tasklist
+* [X] Make a repo
+* [X] Make and test the card
+* [X] Get the buttons working
+* [X] Get the display working, with coordinates
+* [X] Get the encoders working
+* [ ] Connect a state machine to the encoders, see [buxtronix](http://www.buxtronix.net/2011/10/rotary-encoders-done-properly.html)
+* [ ] Debounce the buttons without delay
+* [ ] Make the buttons control a pixel
+* [ ] Make the encoders control a pixel
+* [ ] Make a game state
+
+
+## Tasks for later
+* Get the BOM to work automagically [KiCAD BOM to Markdown](https://analogoutputblog.wordpress.com/2020/07/03/mark-down-your-bom/)
 
 
 
