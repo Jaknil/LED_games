@@ -6,7 +6,7 @@ https://github.com/Jaknil/LED_games/blob/master/README.md
 */
 
 const String buttons[] = {"OPTIONS", "START","UP","RIGHT","ACTION","DOWN","LEFT"};
-const int InputPins[] = {8,9,10,11,A0,A4,A5}; // 1K Hardware pull up and positive logic
+const int InputPins[] = {8,9,10,11,A0,A4,A5}; // 1K Hardware pull down and positive logic
 
 //OUTPUTS
 #define LED_SIGPin 12     // the number of the LED_SIG OUTPUT pin
