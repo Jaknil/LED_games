@@ -16,9 +16,7 @@ int holdTime = 500; //in millis
 
 
 //OUTPUTS
-#define LED_SIGPin 12     // the number of the LED_SIG OUTPUT pin
 #define LEDPin 13      // the number of the onboard LED OUTPUT pin 
-#define SPKbuttonPin A7     // the number of the SPK speaker OUTPUT pin (active with 150Ohm series resistor)
 
 void setup() {
     // initialize serial communication at 9600 bits per second:
