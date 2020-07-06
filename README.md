@@ -97,7 +97,7 @@ There is much talk online of the need to hardware debounce the noise from the in
 * [X] Get the buttons working
 * [X] Get the display working, with coordinates
 * [X] Get the encoders working
-* [ ] Connect a state machine to the encoders, see [buxtronix](http://www.buxtronix.net/2011/10/rotary-encoders-done-properly.html)
+* [X] Connect a state machine to the encoders, see [buxtronix](http://www.buxtronix.net/2011/10/rotary-encoders-done-properly.html)
 * [ ] Debounce the buttons without delay
 * [ ] Make the buttons control a pixel
 * [ ] Make the encoders control a pixel
