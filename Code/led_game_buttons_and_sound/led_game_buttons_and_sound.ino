@@ -38,19 +38,23 @@ buttonStatus[8] = !buttonStatus[8];
 //do something with the data
 if (buttonStatus[i] == HIGH){
   Serial.println(buttons[i]); //print the pressed button to serial
-  digitalWrite(LEDPin, HIGH);
 }
 }
 
+//test LED
+ if(buttonStatus[4] == HIGH){
+  digitalWrite(LEDPin, HIGH);
+  delay(10);
+}  else {
+    digitalWrite(LEDPin, LOW);
+  }
 //test speaker
 
-  if(buttonStatus[0]==1 && buttonStatus[1]==1){ //test speaker when both small buttons are pressed
+  if(buttonStatus[0]==HIGH && buttonStatus[1]==HIGH){ //test speaker when both small buttons are pressed
   digitalWrite(SPKbuttonPin, HIGH); 
   delay(10); //short since the speaker is loud
     }else {
-        // turn LED and speaker off:
-              digitalWrite(LEDPin, LOW);
-              digitalWrite(SPKbuttonPin, LOW);
+        // turn speaker off:
+                            digitalWrite(SPKbuttonPin, LOW);
   }
-
 }
