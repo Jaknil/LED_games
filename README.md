@@ -97,8 +97,8 @@ There is much talk online of the need to hardware debounce the noise from the in
 * [X] Get the buttons working
 * [X] Get the display working, with coordinates
 * [X] Get the encoders working
-* [X] Connect a state machine to the encoders, see [buxtronix](http://www.buxtronix.net/2011/10/rotary-encoders-done-properly.html)
-* [ ] Debounce the buttons without delay
+* [X] Connect a state machine to the encoders, see [buxtronix](http://www.buxtronix.net/2011/10/rotary-encoders-done-properly.html) (wrote my own)
+* [ ] Debounce the buttons without delay, perhaps use integrator instead of timer see [kennethkuhn](http://www.kennethkuhn.com/electronics/debounce.c)
 * [ ] Make the buttons control a pixel
 * [ ] Make the encoders control a pixel
 * [ ] Make a game state
