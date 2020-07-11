@@ -79,6 +79,10 @@ void loop() {
 //increment the encoders, as fast as possible
 ENCinc(ENC1[0],ENC1[1],&ENC1[2],&ENC1[3]);//Left pin, right pin, state,counter; //X
 ENCinc(ENC2[0],ENC2[1],&ENC2[2],&ENC2[3]);  //Left pin, right pin, state,counter; //Y
+
+
+//Correct out of bounds here! (or wrap)
+
 //if enough time since read, refresh screen. Less sending = betting listening to encoders
 if (millis() > (timer + holdTime)){
 //blue cursor
