@@ -37,7 +37,7 @@ Serial.println(ENC2[3]/4); //send line
   timer = millis(); // reset clock
 }
 }
-
+//Increment encoder function
 int ENCinc(int ENC_L, int ENC_R, int *state, int *count_adress){
 bool ENread[2]; //Saves time in the loop?
 int count = *count_adress;
