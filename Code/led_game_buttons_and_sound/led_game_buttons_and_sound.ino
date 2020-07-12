@@ -33,6 +33,10 @@ void loop() {
 
 ScanButtons(); //Scans all buttons
 
+//TODO add possibillty to detect single keypresses (debounce)
+//Strategy, create 2-dim array and feed it the scans, let it shift itself along.
+//Scan on known interval and only change debounced result row if all are the same
+
 //do something with the data
 for (int i = 0; i < (countButtons); i++) {
 if (buttonStatus[i] == HIGH){
