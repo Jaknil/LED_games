@@ -8,7 +8,6 @@ My first attempt at using classes for Arduino
 Documentation at
 https://github.com/Jaknil/LED_games/blob/master/README.md
 */
-
 class Encoder
 {
 private:
@@ -16,6 +15,7 @@ private:
 public:
   int leftPin = 0;
   int rightPin = 0;
+  void begin();
   int count = 0;
   //Incerement method, returns count
   int inc(){
@@ -67,30 +67,33 @@ public:
       }
       break;
     }
-
   }
-void begin{ // initialize the encoder pins as inputs:
+
+
+}; //end encoder class
+
+  void Encoder::begin(){ // initialize the encoder pins as inputs:
     pinMode(leftPin, INPUT);
     pinMode(rightPin, INPUT);
 }
 
-} //end encoder class
 
 //Timer
 unsigned long timer = 0;
 int holdTime = 100; //in millis
 
-
+//Create our encoders
+  Encoder ENC1;  
+  Encoder ENC2;
+  
 void setup() {
   //Setup our encoders
-  Encoder EN1;
-  EN1.leftPin = 3;
-  EN1.rightPin = 6;
-  EN1.begin;
-  Encoder EN2;
-  EN1.leftPin = 2;
-  EN1.rightPin = 5;
-  EN1.begin;
+  ENC1.leftPin = 3;
+  ENC1.rightPin = 6;
+  ENC2.leftPin = 2;
+  ENC2.rightPin = 5;
+  ENC1.begin();
+  ENC2.begin();
 
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
@@ -99,15 +102,15 @@ void setup() {
 
 void loop() {
   //increment the encoders, as fast as possible
-  ENC1.inc;
-  ENC2.inc;
+  ENC1.inc();
+  ENC2.inc();
 
   //if enough time since read, send line
   if (millis() > (timer + holdTime)){
     Serial.print("ENC1: ");
-    Serial.print(ENC1.counter/4);
+    Serial.print(ENC1.count/4);
     Serial.print(" ENC2: ");
-    Serial.println(ENC1.counter/4); //send line
+    Serial.println(ENC2.count/4); //send line
     timer = millis(); // reset clock
   }
 }
