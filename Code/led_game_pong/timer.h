@@ -6,27 +6,21 @@
 
 class Timer{
 private:
-int _interval = 0;
 unsigned long lastTime = 0;
 public:
-Timer(int interval);
-void interval(int interval);
+int interval = 0;
+Timer(int setInterval);
 bool expired();
 }; //end class
 
-Timer::Timer(int interval){
-   //Timer.interval(interval);
-      lastTime = millis(); // (re)start clock
-      _interval = interval;
+Timer::Timer(int setInterval){
+       lastTime = millis(); // (re)start clock
+      interval = setInterval;
    }
 
-void Timer::interval(int interval){ //change the interval
-      lastTime = millis(); // (re)start clock
-      _interval = interval;
-}
 
 bool Timer::expired(){
-  bool expired = (millis() > (lastTime + _interval)); //goes high if timer has expired
+  bool expired = (millis() > (lastTime + interval)); //goes high if timer has expired
 if(expired){
       lastTime = millis(); // reset clock
 }

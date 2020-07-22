@@ -11,6 +11,8 @@ private:
   int _rightPin;
   int oldCount = -1; //to start with a trigger
   public:
+  int minCount = 1;
+  int maxCount = 10;
   int count = 0;
   int countFull = 0;
   void inc();
@@ -21,11 +23,18 @@ private:
 bool Encoder::checkTrigger(){ //checking this trigger resets it!
     bool result = 0;
     if(count%4==0){ //We are at full step 
+       countFull=count/4; //update full step value
+       //check bounds
+       if(countFull < minCount){
+    count = minCount*4;
+  }
+     if(countFull > maxCount){
+    count = maxCount*4;
+  } //out of bounds should not return new step
         if (count!=oldCount){ //it's a new step
-        result = 1; //set flag
+         result = 1; //set flag
         oldCount = count; //resetting trigger
-        countFull=count/4; //Store full step value
-              }
+         }
     }
     return result;
 }
