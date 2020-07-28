@@ -19,10 +19,6 @@ https://github.com/Jaknil/LED_games/blob/master/README.md
 
 //Create timer
 Timer drawInterval(50);
-//move to ball? note in ball when last updated and use timer internally there?
-const int initialBallSpeed = 350;
-const int minBallSpeed = 50;
-Timer ballSpeed(initialBallSpeed); //increases for each bounce
 //Matrix
 // Params for width and height
 const uint8_t kMatrixWidth = 16;
@@ -51,6 +47,21 @@ int leng = 5;
 
 class Ball{
 private:
+const int initialBallSpeed = 350;
+const int minBallSpeed = 50;
+//Update a value while keeping it inside bounds
+int applyBounds(int value, int change, int lowLimit, int highLimit){
+ //apply change
+ value = value + change;
+ //check bounds
+       if(value < lowLimit){
+    value = lowLimit;
+  }
+     if(value > highLimit){
+    value = highLimit;
+  }
+  return value;
+}
 public:
 int x = 5;
 int y = 7;
@@ -59,6 +70,13 @@ int veloY = 1;
 int oldX = x;
 int oldY = y;
 int acc = -25; //how much time to reduce the increment with
+//timer
+Timer ballSpeed; //increases for each bounce, could not use variable?
+
+void updateBallspeed(){
+ballSpeed.interval = applyBounds(ballSpeed.interval,acc,minBallSpeed,initialBallSpeed); 
+}
+
 void bounceY(){
     veloY = veloY*(-1);
 }
@@ -144,20 +162,20 @@ player2score.leng = 16;
 
 
 void loop() {
-if(ballSpeed.expired()){
+if(ball1.ballSpeed.expired()){
  ball1.inc();
 
 //Bounce ball against players
 if(ball1.collideWithLine(player1,1)){
  // Serial.println("bounce 1");
      ball1.bounceY();
-     updateBallspeed();
+     ball1.updateBallspeed();
 }
 
 if(ball1.collideWithLine(player2,1)){
   //Serial.println("bounce 2");
      ball1.bounceY();
-     updateBallspeed();
+     ball1.updateBallspeed();
 }
 
   //update ball positon on led matrix
@@ -198,8 +216,3 @@ player2.oldX= player2.x;
 }
 } //END LOOP
 //FUNCTIONS
-
-//Make this part of Ball later
-void updateBallspeed(){
-ballSpeed.interval = applyBounds(ballSpeed.interval, ball1.acc,minBallSpeed,initialBallSpeed);
-}

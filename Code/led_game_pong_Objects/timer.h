@@ -8,10 +8,15 @@ class Timer{
 private:
 unsigned long lastTime = 0;
 public:
-int interval = 0;
+int interval = 500;
 Timer(int setInterval);
+Timer();
 bool expired();
 }; //end class
+
+Timer::Timer(){
+       lastTime = millis(); // (re)start clock
+   }
 
 Timer::Timer(int setInterval){
        lastTime = millis(); // (re)start clock

@@ -1,18 +1,6 @@
-//Update a value while keeping it inside bounds
-int applyBounds(int value, int change, int lowLimit, int highLimit){
- //apply change
- value = value + change;
- //check bounds
-       if(value < lowLimit){
-    value = lowLimit;
-  }
-     if(value > highLimit){
-    value = highLimit;
-  }
-  return value;
-}
 
 
+//NOT NEEDED
 void printStuff(){
   Serial.print("ENC1: ");
     Serial.print(ENC1.count/4);
@@ -53,8 +41,7 @@ uint32_t XY( uint8_t x, uint8_t y)
 }
 
 uint16_t XYsafe( uint8_t x, uint8_t y)
-{
-  if( x >= kMatrixWidth) return -1;
+{  if( x >= kMatrixWidth) return -1;
   if( y >= kMatrixHeight) return -1;
   return XY(x,y);
 }
