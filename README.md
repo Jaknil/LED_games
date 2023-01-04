@@ -17,6 +17,8 @@
 ![](img/card_back.jpg)
 ![](img/arduino_ios.JPG)
 
+*Not latest version, se PDF for complete schematic*
+
 ## BOM 
 
 ### Controller board
@@ -61,13 +63,11 @@ I use the [Adafruit Neopixel best practices](https://learn.adafruit.com/adafruit
 I have access to:
 
 * 0.9A from my laptop USB 
-* 2.4A USB power supply (from a RaspberryPi kit)
-* 2 A barrel jack power supply (fits Arduino UNO)
+* 2.5A 5V power supply 
+ 
+It is wired to run on either USB or external power, the power sources are connected in paralell. To avoid problems with them feeding each other when both are connected a reverse polarity protection diode is connected on the external power positive lead, this makes it supply a slightly lover voltage to the circuit. That should keep it from going higher voltage that the USB and limit the risk of it feeding current into the USB. The USB is prevented by doing the opposite by the same diode.
 
-I'll software limit the power draw. I'm using a laptop to test the card and USB 3.0 can give [0.9A](https://en.wikipedia.org/wiki/USB_3.0)
-I can increase as needed later.
-
-I'll try to buy a barrel jack adapter so that I don't have to cut the cables on the second power supply.
+In retrospect I could have put such a diode on both supply leads.
 
 ### Microcontroller
 
@@ -89,19 +89,7 @@ $2.46 with USB cable
 $1.89 for 5 
 [Aliexpress link](https://www.aliexpress.com/item/32872023811.html?spm=a2g0s.9042311.0.0.27424c4dcrN317)
 
-There is much talk online of the need to hardware debounce the noise from the internal contacts. I hope that I can do it in software instead, this page seems like a good place to start: [buxtronix](http://www.buxtronix.net/2011/10/rotary-encoders-done-properly.html)
-
-## Tasklist
-* [X] Make a repo
-* [X] Make and test the card
-* [X] Get the buttons working
-* [X] Get the display working, with coordinates
-* [X] Get the encoders working
-* [X] Connect a state machine to the encoders, see [buxtronix](http://www.buxtronix.net/2011/10/rotary-encoders-done-properly.html) (wrote my own)
-* [ ] Debounce the buttons without delay, perhaps use integrator instead of timer see [kennethkuhn](http://www.kennethkuhn.com/electronics/debounce.c)
-* [ ] Make the buttons control a pixel
-* [ ] Make the encoders control a pixel
-* [ ] Make a game state
+I used this guide for the encoders [buxtronix](http://www.buxtronix.net/2011/10/rotary-encoders-done-properly.html)
 
 
 ## Tasks for later
