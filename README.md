@@ -62,12 +62,14 @@ I use the [Adafruit Neopixel best practices](https://learn.adafruit.com/adafruit
 
 I have access to:
 
-* 0.9A from my laptop USB 
+* 0.5A from my laptop USB 
 * 2.5A 5V power supply 
  
 It is wired to run on either USB or external power, the power sources are connected in paralell. To avoid problems with them feeding each other when both are connected a reverse polarity protection diode is connected on the external power positive lead, this makes it supply a slightly lover voltage to the circuit. That should keep it from going higher voltage that the USB and limit the risk of it feeding current into the USB. The USB is prevented by doing the opposite by the same diode.
 
 In retrospect I could have put such a diode on both supply leads.
+
+The code should software limit to under 2.5A to avoid "brown outs" resetting the arduino
 
 ### Microcontroller
 
