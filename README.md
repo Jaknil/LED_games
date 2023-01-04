@@ -6,7 +6,7 @@
 
 
 ## Files
-* [Schematic PDF](schematic_card.pdf)
+* [Schematic PDF](schematic_card.pdf) (Found an error, LED_sig = DATA_PIN)
 * [Schematic KiCAD](Led_game_nano/)
 * [Arduino source code](Code/)
 
