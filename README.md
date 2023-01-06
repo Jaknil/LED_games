@@ -75,7 +75,7 @@ The code should software limit to under 2.5A to avoid "brown outs" resetting the
 
 ![](img/arduino.jpg)
 
-I'm using an Arduino Nano with the CH40 USB to transistor logic chip. [Drivers for the chip](https://github.com/Jaknil/Arduino_material/blob/master/CH341SER.EXE)
+I'm using an imported Chinese Arduino Nano with the CH40 USB to transistor logic chip. Remember to select "Old Bootloader" under processor. Herre you can download [drivers for the chip](https://github.com/KubenKoder/Arduino/blob/master/USB%20driver/README.md#usb-drivers)
 
 $2.46 with USB cable
 * [Aliexpress link](https://www.aliexpress.com/item/32341832857.html?spm=a2g0s.9042311.0.0.27424c4dasmxDQ)
