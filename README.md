@@ -1,5 +1,10 @@
 # LED_games
  16x16 LED matrix games and arduino controller with encoders and buttons
+ 
+[Click to view on Youtube shorts](https://www.youtube.com/shorts/sAWX2VsAL7c)
+
+[![image](https://github.com/user-attachments/assets/a50da88d-c90a-42e5-8eb5-2b40291611cd)](https://www.youtube.com/shorts/sAWX2VsAL7c)
+ 
 ## Summary
 
 ## Files
