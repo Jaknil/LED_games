@@ -33,6 +33,9 @@ CRGB* const leds( leds_plus_safety_pixel + 1);
 //OUTPUTS
 #define DATA_PIN 12 //for the leds
 
+//Speaker pin
+#define SPKbuttonPin A3     // the number of the SPK speaker OUTPUT pin (active with 150Ohm series resistor)
+
 //GAME STARTS HERE
 
 class Line{
@@ -177,6 +180,10 @@ Serial.println("x min");
     y=15;
 Serial.println("Y max, player 1 loses");
 player1Lost = 1;
+//Beep with speaker
+  digitalWrite(SPKbuttonPin, HIGH); 
+  delay(10); //short since the speaker is loud
+  digitalWrite(SPKbuttonPin, LOW);
   } 
   
 if(y<=0){
@@ -184,6 +191,10 @@ if(y<=0){
     y=0;
 Serial.println("Y min, player 2 loses");
 player2Lost = 1;
+//Beep with speaker
+  digitalWrite(SPKbuttonPin, HIGH); 
+  delay(10); //short since the speaker is loud
+  digitalWrite(SPKbuttonPin, LOW);
   }
 
   
@@ -225,6 +236,11 @@ void collideWithPaddle(Line paddle){
   //bounceY(); //changes y dir
   veloYdir = veloYdir*(-1); //Bounce y always
   Serial.println("bounce 1");
+//Beep with speaker
+  digitalWrite(SPKbuttonPin, HIGH); 
+  delay(2); //short since the speaker is loud
+  digitalWrite(SPKbuttonPin, LOW);
+
   inc(); //move it in new direction, it will bounce!
   updateBallspeed(); //increases speed to next bounce
    
@@ -282,6 +298,9 @@ player2points.x = 0;
 player2points.y = 0;
 player1points.leng = 0;
 player2points.leng = 0;
+
+  pinMode(SPKbuttonPin, OUTPUT); // setup speaker
+
 }
 
 
