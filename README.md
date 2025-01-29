@@ -2,13 +2,12 @@
  16x16 LED matrix games and arduino controller with encoders and buttons
 ## Summary
 
-
-
-
 ## Files
 * [Schematic PDF](schematic_card.pdf) (Found an error, LED_sig = DATA_PIN)
 * [Schematic KiCAD](Led_game_nano/)
 * [Arduino source code](Code/)
+  * [Etch-A-Sketch](Code/led_game_show_encoder/)
+  * [PONG! Two player, with scorekeeping](Code/led_game_show_encoder/)
 
 ## Pictures
 ![](img/display_and_controller.jpg)
@@ -96,7 +95,15 @@ I used this guide for the encoders [buxtronix](http://www.buxtronix.net/2011/10/
 
 ## Tasks for later
 * Get the BOM to work automagically [KiCAD BOM to Markdown](https://analogoutputblog.wordpress.com/2020/07/03/mark-down-your-bom/)
+* Fix the error in schematic
+* Upload video of it working
+* Make more games using the buttons.
+* Add sound to the Pong game
+* Add pause/unpause function
 
+
+## Lessons learned
+* No need for external pull up resistors, just activate the internal ones in the arduino
 
 
 
