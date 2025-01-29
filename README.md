@@ -7,7 +7,7 @@
 * [Schematic KiCAD](Led_game_nano/)
 * [Arduino source code](Code/)
   * [Etch-A-Sketch](Code/led_game_show_encoder/)
-  * [PONG! Two player, with scorekeeping](Code/led_game_show_encoder/)
+  * [PONG! Two player, with scorekeeping and sounds](Code/led_game_show_encoder/)
 
 ## Pictures
 ![](img/display_and_controller.jpg)
@@ -98,7 +98,6 @@ I used this guide for the encoders [buxtronix](http://www.buxtronix.net/2011/10/
 * Fix the error in schematic
 * Upload video of it working
 * Make more games using the buttons.
-* Add sound to the Pong game
 * Add pause/unpause function
 
 
